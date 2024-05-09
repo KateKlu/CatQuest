@@ -9,9 +9,9 @@ function FactPage() {
          <h1>Did you know that?</h1>
          <CatPhoto />
          <CatFact />
-         <button className="btn">
-            <Link to="/cat-facts">Back</Link>
-         </button>
+         <Link to="/cat-facts">
+            <button className="btn">Back</button>
+         </Link>
       </div>
    );
 }

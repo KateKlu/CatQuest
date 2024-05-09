@@ -76,11 +76,9 @@ function SearchPage() {
                   )
                )}
             </ul>
-            <button className="btn">
-               <Link to="results" state={{ parameters: catQualities }}>
-                  Search
-               </Link>
-            </button>
+            <Link to="results" state={{ parameters: catQualities }}>
+               <button className="btn">Search</button>
+            </Link>
          </form>
       </div>
    );
