@@ -30,7 +30,7 @@ function Header() {
                         isActive ? 'active-navlink navlink' : 'navlink'
                      }
                   >
-                     Choose breed
+                     Choose your breed
                   </NavLink>
                </li>
                <li>
@@ -53,6 +53,7 @@ function Header() {
                      Cat facts
                   </NavLink>
                </li>
+               <li>Light/Dark</li>
             </ul>
          </nav>
       </>

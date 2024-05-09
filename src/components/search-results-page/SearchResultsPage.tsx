@@ -1,7 +1,14 @@
+import { Results } from './Results';
 import './search-results-page.css';
 
 function SearchResultsPage() {
-   return <p>SearchResultsPage</p>;
+   return (
+      <div className="search-breed-result">
+         <h1>Search results</h1>
+         <Results />
+         <button className="btn">Back</button>
+      </div>
+   );
 }
 
 export default SearchResultsPage;

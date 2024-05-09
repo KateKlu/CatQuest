@@ -9,7 +9,7 @@ function HomePage() {
          <img src={homeImg} alt="Two funny kittens" className="home-img" />
          <div className="btn-block">
             <button className="btn">
-               <Link to="search">Choose breed</Link>
+               <Link to="search">Choose your breed</Link>
             </button>
             <button className="btn">
                <Link to="search-breed">Breed info</Link>

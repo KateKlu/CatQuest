@@ -5,7 +5,10 @@ function Footer() {
       <>
          <footer>
             <p>
-               <a href="http://">Open-source code,</a> by Katerina Kliuieva
+               <a href="https://github.com/KateKlu/CatQuest" target="blank">
+                  Open-source code,
+               </a>{' '}
+               by Katerina Kliuieva
             </p>
          </footer>
       </>
