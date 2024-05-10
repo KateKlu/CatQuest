@@ -1,3 +1,17 @@
 .footer {
    background-color: var(--blue);
+   height: 2.5rem;
+   /* padding: 0.3rem 0.8rem; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+footer p {
+   font-size: 1rem;
+   margin: 0;
+}
+
+footer a {
+   color: var(--light-color);
 }

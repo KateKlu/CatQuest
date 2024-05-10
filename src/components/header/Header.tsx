@@ -13,7 +13,7 @@ function Header() {
             <i className="fa-solid fa-bars" />
          </div>
          <ul className="nav-links">
-            <li>
+            <li className="nav-link">
                <NavLink
                   to=""
                   className={({ isActive }) =>
@@ -23,7 +23,7 @@ function Header() {
                   Home
                </NavLink>
             </li>
-            <li>
+            <li className="nav-link">
                <NavLink
                   to="search"
                   className={({ isActive }) =>
@@ -33,7 +33,7 @@ function Header() {
                   Choose your breed
                </NavLink>
             </li>
-            <li>
+            <li className="nav-link">
                <NavLink
                   to="search-breed"
                   className={({ isActive }) =>
@@ -43,7 +43,7 @@ function Header() {
                   Breed info
                </NavLink>
             </li>
-            <li>
+            <li className="nav-link">
                <NavLink
                   to="cat-facts"
                   className={({ isActive }) =>
@@ -53,7 +53,7 @@ function Header() {
                   Cat facts
                </NavLink>
             </li>
-            <li>
+            <li className="nav-link">
                <LightDark />
             </li>
          </ul>
