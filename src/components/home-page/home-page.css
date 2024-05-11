@@ -21,6 +21,7 @@
    flex-direction: column;
 }
 
+/*  Media screen  */
 @media (min-width: 380px) {
    .home {
       padding: 2rem;
