@@ -9,6 +9,7 @@
    display: flex;
    justify-content: space-between;
    padding: var(--navbar-paddingTB) 1rem;
+   border-bottom: 1px solid var(--dark-color);
 }
 
 .logo {
@@ -23,22 +24,42 @@
 
 .burger-menu-icon {
    color: white;
-   /* font-size: 30px; */
+   /* background: transparent;
+   border: none; */
    font-size: calc(var(--navbar-height) - var(--navbar-paddingTB) * 2);
    line-height: 1;
+   cursor: pointer;
 }
 
 .nav-links {
    display: none;
+   width: 100%;
+   flex-direction: column;
+   position: absolute;
+   top: var(--navbar-height);
+   left: 0;
+   background-color: var(--blue);
+   padding-bottom: 1rem;
+}
+
+.is-visible {
+   display: flex;
 }
 
 .nav-link {
-   margin-left: 15px;
    font-size: 1.5rem;
+   padding: 0.3rem 0;
 }
 
 .navlink {
+   display: block;
    color: var(--light-color);
+   width: 100%;
+   text-align: center;
+}
+
+.navlink :hover {
+   box-shadow: inset 0px -7px 15px var(--dark-color);
 }
 
 .active-navlink {
@@ -47,14 +68,18 @@
 
 .light-dark {
    font-size: 1.3rem;
+   line-height: 1;
    font-weight: 500;
    color: var(--light-color);
    background-color: transparent;
    border: 1px solid var(--light-color);
    border-radius: 50px;
-   padding: 5px 15px;
+   padding: 0.3rem 1rem 0.3rem;
    cursor: pointer;
+   display: block;
+   margin: 0 auto;
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
    :root {
@@ -67,8 +92,18 @@
    }
 
    .nav-links {
+      position: static;
       display: flex;
+      flex-direction: row;
       justify-content: flex-end;
       align-items: center;
+      width: auto;
+      padding: 0;
+   }
+
+   .nav-link {
+      margin-left: 1rem;
+      padding: 0;
+      display: block;
    }
 }
