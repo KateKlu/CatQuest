@@ -1,0 +1,26 @@
+.cat-facts {
+   display: flex;
+   flex-direction: column;
+   padding: 1.5rem;
+}
+
+.cats-facts-text {
+   margin-bottom: 30px;
+}
+
+.cat-imgs {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.fact-link {
+   width: 31%;
+   margin-bottom: 0.7rem;
+}
+
+.cat-small-img {
+   width: 100%;
+   border-radius: 100%;
+}

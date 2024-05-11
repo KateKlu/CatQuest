@@ -24,8 +24,8 @@
 
 .burger-menu-icon {
    color: white;
-   /* background: transparent;
-   border: none; */
+   background: transparent;
+   border: none;
    font-size: calc(var(--navbar-height) - var(--navbar-paddingTB) * 2);
    line-height: 1;
    cursor: pointer;

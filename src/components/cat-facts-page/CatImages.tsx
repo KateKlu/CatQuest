@@ -6,8 +6,6 @@ import cat4 from '../../img/CatFactsPage/cat4.jpg';
 import cat5 from '../../img/CatFactsPage/cat5.jpg';
 import cat6 from '../../img/CatFactsPage/cat6.jpg';
 
-import './cat-facts-page.css';
-
 export function CatImages() {
    return (
       <div className="cat-imgs">
