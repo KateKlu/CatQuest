@@ -6,7 +6,7 @@ import './fact-page.css';
 function FactPage() {
    return (
       <div className="fact-page">
-         <div className="conteiner">
+         <div className="container">
             <h1>Did you know that?</h1>
             <CatPhoto />
             <CatFact />
