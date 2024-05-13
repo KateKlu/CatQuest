@@ -1,6 +1,28 @@
+.search {
+   display: flex;
+   flex-direction: column;
+   padding: 1.5rem;
+}
+
+.search-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.cat-qualities {
+   margin-bottom: 40px;
+   list-style: none;
+}
+
+.cat-quality-input {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
 /*  Media screen  */
 @media (min-width: 380px) {
-   .fact-page {
+   .search {
       padding: 2rem;
    }
 }

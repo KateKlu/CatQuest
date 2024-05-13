@@ -63,8 +63,8 @@ function SearchPage() {
    };
 
    return (
-      <div className="search">
-         <h1>Which cat breed is right for you?</h1>
+      <div className="container search">
+         <h1>What cat is right for you?</h1>
          <p>Choose what is important to you</p>
          <form action="" className="search-form">
             <ul className="cat-qualities">

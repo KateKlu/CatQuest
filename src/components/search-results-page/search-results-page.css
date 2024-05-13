@@ -1,6 +1,36 @@
+.search-breed-result {
+   display: flex;
+   flex-direction: column;
+   padding: 1.5rem;
+}
+
+.result {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-bottom: 1rem;
+   cursor: pointer;
+}
+
+.result-img {
+   display: block;
+   margin: 0 auto;
+   border-radius: 7%;
+   margin-bottom: 5px;
+   max-width: 70vw;
+   max-height: 70vw;
+   object-fit: cover;
+}
+
+.result-name {
+   font-size: 1.7rem;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
 /*  Media screen  */
 @media (min-width: 380px) {
-   .fact-page {
+   .search-breed-result {
       padding: 2rem;
    }
 }

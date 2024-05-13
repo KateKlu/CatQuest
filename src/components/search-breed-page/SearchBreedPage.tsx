@@ -6,7 +6,7 @@ import './search-breed-page.css';
 
 function SearchBreedPage() {
    return (
-      <div className="search-breed">
+      <div className="container search-breed">
          <h1>Find breed by name</h1>
          <BreedByName />
          <img

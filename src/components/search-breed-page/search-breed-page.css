@@ -1,6 +1,50 @@
+.search-breed {
+   display: flex;
+   flex-direction: column;
+   padding: 1.5rem;
+}
+
+.search-breed-form input[type='text'] {
+   width: 83%;
+   padding: 10px;
+   border-radius: 10px 0 0 10px;
+   font-size: 1.3rem;
+   font-weight: 600;
+}
+
+.search-breed-form {
+   display: flex;
+   margin-bottom: 30px;
+}
+
+.search-breed-form input[type='submit'] {
+   width: 17%;
+   font-size: 2rem;
+   line-height: 0.9;
+   text-shadow: 1px 1px 5px white;
+   padding: 4px;
+   margin: 0;
+   border-radius: 0 10px 10px 0;
+}
+
+.search-cats {
+   max-width: 70vw;
+   max-height: 70vw;
+   display: block;
+   margin: 0 auto;
+   border-radius: 7%;
+   margin-bottom: 35px;
+}
+
+.random-breed {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 10px;
+}
+
 /*  Media screen  */
 @media (min-width: 380px) {
-   .fact-page {
+   .search-breed {
       padding: 2rem;
    }
 }
