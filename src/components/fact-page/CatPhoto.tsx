@@ -1,32 +1,33 @@
-import { useEffect, useState } from 'react';
-import { FetchData } from './fetch';
+import FetchData from './fetch';
+import { CatRandomPhoto } from './fact-page.types';
 
-// import imgSrc from '../../img/search-breed-cats.jpg';
 import './fact-page.css';
 
-interface CatRandomPhoto {
-   url: string;
-}
-
 export const CatPhoto = () => {
-   const [catPhoto, setCatPhoto] = useState<string>('');
+   const { data, error } = FetchData<CatRandomPhoto[]>(
+      'https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+   );
 
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const data: CatRandomPhoto[] = await FetchData(
-               'https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
-            );
-            console.log(data);
-            setCatPhoto(data[0].url);
-            console.log(catPhoto);
-         } catch (error) {
-            console.error('Error fetching cat fact:', error);
-         }
-      };
-
-      fetchData();
-   }, []);
-
-   return <img src={catPhoto} alt="Random cat image" className="cat-img" />;
+   if (error) {
+      console.error(`Error fetching data: ${error.message}`);
+      return <p className="fact-text">Some error occurred</p>;
+   } else if (data) {
+      const catPhoto = data[0].url;
+      return <img src={catPhoto} alt="Random cat image" className="cat-img" />;
+   } else {
+      return <p className="fact-text">Loading...</p>;
+   }
 };
+
+// interface CatPhotoProps {
+//    photoUrl: string;
+//    error: string | null;
+// }
+
+// export const CatPhoto: React.FC<CatPhotoProps> = ({ photoUrl, error }) => {
+//    if (error) {
+//       return <p>{error}</p>;
+//    }
+
+//    return <img src={photoUrl} alt="Random cat image" className="cat-img" />;
+// };
