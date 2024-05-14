@@ -1,4 +1,4 @@
-import FetchData from './fetch';
+import FetchData from '../../utils/fetch';
 import { CatRandomPhoto } from './fact-page.types';
 
 import './fact-page.css';
@@ -11,7 +11,8 @@ export const CatPhoto = () => {
    if (error) {
       console.error(`Error fetching data: ${error.message}`);
       return <p className="fact-text">Some error occurred</p>;
-   } else if (data) {
+   }
+   if (data) {
       const catPhoto = data[0].url;
       return <img src={catPhoto} alt="Random cat image" className="cat-img" />;
    } else {
