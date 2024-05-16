@@ -5,8 +5,8 @@ import './breed-page.css';
 function BreedPage() {
    return (
       <div className="container breed-page">
-         <h1 className="breed-name">Burmese</h1>
          <PhotoSlider />
+         <h1 className="breed-name">Burmese</h1>
          <BreedDescription />
          <button className="btn">Back</button>
       </div>
