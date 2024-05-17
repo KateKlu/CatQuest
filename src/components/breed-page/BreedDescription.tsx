@@ -1,4 +1,4 @@
-import { CatQualities } from './CatQualities';
+import { BreedCharacteristics } from './BreedCharacteristics';
 
 export const BreedDescription = () => {
    return (
@@ -11,7 +11,7 @@ export const BreedDescription = () => {
          <p className="description">
             Temperament: Active, Energetic, Independent, Intelligent, Gentle
          </p>
-         <CatQualities />
+         <BreedCharacteristics />
          <p className="description">
             The Abyssinian is easy to care for, and a joy to have in your home.
             They’re affectionate cats and love both people and other animals.

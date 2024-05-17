@@ -1,4 +1,4 @@
-export const CatQualities = () => {
+export const BreedCharacteristics = () => {
    return (
       <>
          <ul className="characteristics-list">

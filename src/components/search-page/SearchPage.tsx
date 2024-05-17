@@ -1,66 +1,17 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CatQualities, LabelNames } from './search.types';
+import { CatQualities } from './CatQualities';
 import './search-page.css';
-import CatQualityInput from './CatQualityInput';
 
 function SearchPage() {
-   const [catQualities, setCatQualities] = useState<CatQualities>({
-      child_friendly: 1,
-      dog_friendly: 1,
-      energy_level: 1,
-      grooming: 1,
-      health_issues: 1,
-      intelligence: 1,
-      shedding_level: 1,
-      social_needs: 1,
-      stranger_friendly: 1,
-   });
-
-   const labelNames: LabelNames = {
-      child_friendly: 'child friendly',
-      dog_friendly: 'dog friendly',
-      energy_level: 'energy level',
-      grooming: 'grooming',
-      health_issues: 'health issues',
-      intelligence: 'intelligence',
-      shedding_level: 'shedding level',
-      social_needs: 'social needs',
-      stranger_friendly: 'stranger friendly',
-   };
-
-   const handleChangeInputValue = (
-      event: React.ChangeEvent<HTMLInputElement>
-   ) => {
-      const { name, value } = event.target;
-      setCatQualities((prevParams) => ({
-         ...prevParams,
-         [name]: +value,
-      }));
-
-      // console.log(catQualities);
-   };
-
    return (
       <div className="container search">
          <h1>What cat is right for you?</h1>
          <p>Choose what is important to you</p>
-         <form action="" className="search-form">
-            <ul className="cat-qualities">
-               {Object.keys(catQualities).map((item: string) => (
-                  <CatQualityInput
-                     key={item}
-                     labelName={labelNames[item]}
-                     name={item}
-                     value={catQualities[item]}
-                     onChange={handleChangeInputValue}
-                  />
-               ))}
-            </ul>
-            <Link to="results" state={{ parameters: catQualities }}>
-               <button className="btn">Search</button>
-            </Link>
-         </form>
+         <CatQualities />
+         <Link to="results">
+            {/* <Link to="results" state={{ parameters: catQualities }}> */}
+            <button className="btn">Search</button>
+         </Link>
       </div>
    );
 }

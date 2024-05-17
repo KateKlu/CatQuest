@@ -1,14 +1,15 @@
 import FetchData from '../../utils/fetch';
-import { CatQualities } from '../search-page/search.types';
+// import { CatQualities } from '../search-page/search.types';
 import { ResultElement } from './ResultElement';
 import { BreedsResponse } from './search-results.types';
 
-interface ResultsProps {
-   searchParametrs: CatQualities;
-}
+// interface ResultsProps {
+//    searchParametrs: CatQualities;
+// }
 
-export const Results: React.FC<ResultsProps> = ({ searchParametrs }) => {
-   console.log(searchParametrs);
+// export const Results: React.FC<ResultsProps> = ({ searchParametrs }) => {
+export const Results = () => {
+   // console.log(searchParametrs);
    const { data, error } = FetchData<BreedsResponse[]>(
       'https://api.thecatapi.com/v1/breeds'
    );
@@ -26,7 +27,10 @@ export const Results: React.FC<ResultsProps> = ({ searchParametrs }) => {
          <div className="results">
             <ul>
                {filteredData.map((item) => (
-                  <ResultElement breedInfo={item} />
+                  <ResultElement
+                     key={item.reference_image_id}
+                     breedInfo={item}
+                  />
                ))}
             </ul>
          </div>

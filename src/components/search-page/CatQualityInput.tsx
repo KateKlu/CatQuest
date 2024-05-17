@@ -1,32 +1,31 @@
+import { useCatQualitiesContext } from '../useCatQualitiesContext';
+
 interface CatQualityInputProps {
-   labelName: string;
-   name: string;
-   value: number;
-   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+   quality: string;
 }
 
-const CatQualityInput: React.FC<CatQualityInputProps> = ({
-   labelName,
-   name,
-   value,
-   onChange,
-}) => {
+const CatQualityInput: React.FC<CatQualityInputProps> = ({ quality }) => {
+   const { catQualities, setCatQualities } = useCatQualitiesContext();
+   const handleChangeInputValue = (
+      event: React.ChangeEvent<HTMLInputElement>
+   ) => {
+      const { name, value } = event.target;
+      setCatQualities((prevParams) => ({
+         ...prevParams,
+         [name]: +value,
+      }));
+   };
    return (
-      <li key={name} className="cat-quality">
-         <label className="cat-quality-input">
-            {labelName}
-            <input
-               type="range"
-               id={name}
-               name={name}
-               min="1"
-               max="5"
-               value={value}
-               step="1"
-               onChange={onChange}
-            />
-         </label>
-      </li>
+      <input
+         type="range"
+         id={quality}
+         name={quality}
+         min="1"
+         max="5"
+         value={catQualities[quality]}
+         step="1"
+         onChange={handleChangeInputValue}
+      />
    );
 };
 
