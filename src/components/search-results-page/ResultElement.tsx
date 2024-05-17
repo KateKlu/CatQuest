@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom';
 import FetchData from '../../utils/fetch';
-import { BreedPhotoUrl } from './search-results.types';
+import { BreedPhotoUrl, BreedsResponse } from './search-results.types';
 
 interface ResultElementProps {
-   breadName: string;
-   photoId: string;
+   breedInfo: BreedsResponse;
 }
 
-export const ResultElement: React.FC<ResultElementProps> = ({
-   breadName,
-   photoId,
-}) => {
+export const ResultElement: React.FC<ResultElementProps> = ({ breedInfo }) => {
    const getBreedPhoto = () => {
       if (error) {
          console.error(`Error fetching data: ${error.message}`);
@@ -21,7 +17,7 @@ export const ResultElement: React.FC<ResultElementProps> = ({
          return (
             <img
                src={imgSrc}
-               alt={breadName + ' cat photo'}
+               alt={breedInfo.name + ' cat photo'}
                className="result-img"
             />
          );
@@ -31,15 +27,15 @@ export const ResultElement: React.FC<ResultElementProps> = ({
    };
 
    const { data, error } = FetchData<BreedPhotoUrl>(
-      `https://api.thecatapi.com/v1/images/${photoId}`
+      `https://api.thecatapi.com/v1/images/${breedInfo.reference_image_id}`
    );
 
    return (
       <li>
          <Link to="/breed">
-            <figure key={photoId} className="result">
+            <figure key={breedInfo.reference_image_id} className="result">
                {getBreedPhoto()}
-               <figcaption className="result-name">{breadName}</figcaption>
+               <figcaption className="result-name">{breedInfo.name}</figcaption>
             </figure>
          </Link>
       </li>

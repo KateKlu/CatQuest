@@ -48,7 +48,7 @@ h2 {
 }
 
 p {
-   font-size: 1.4rem;
+   font-size: 1.3rem;
    font-weight: 500;
    margin-bottom: 20px;
    text-align: center;
@@ -57,12 +57,14 @@ p {
 
 li {
    list-style: none;
+   font-size: 1.1rem;
 }
 
 a {
    font-weight: 500;
    color: rgb(0, 92, 200);
    text-decoration: inherit;
+   font-size: 1.2rem;
 }
 a:hover {
    color: rgb(0, 113, 241);

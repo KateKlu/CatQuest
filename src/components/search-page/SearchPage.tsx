@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CatQualities, LabelNames } from './search.types';
 import './search-page.css';
+import CatQualityInput from './CatQualityInput';
 
 function SearchPage() {
    const [catQualities, setCatQualities] = useState<CatQualities>({
@@ -36,30 +37,8 @@ function SearchPage() {
          ...prevParams,
          [name]: +value,
       }));
-   };
 
-   const createCatQualityInput = (
-      labelName: string,
-      name: string,
-      value: number
-   ) => {
-      return (
-         <li key={name} className="cat-quality">
-            <label className="cat-quality-input">
-               {labelName}
-               <input
-                  type="range"
-                  id={name}
-                  name={name}
-                  min="1"
-                  max="5"
-                  value={value}
-                  step="1"
-                  onChange={handleChangeInputValue}
-               />
-            </label>
-         </li>
-      );
+      // console.log(catQualities);
    };
 
    return (
@@ -68,13 +47,15 @@ function SearchPage() {
          <p>Choose what is important to you</p>
          <form action="" className="search-form">
             <ul className="cat-qualities">
-               {Object.keys(catQualities).map((item: string) =>
-                  createCatQualityInput(
-                     labelNames[item],
-                     item,
-                     catQualities[item]
-                  )
-               )}
+               {Object.keys(catQualities).map((item: string) => (
+                  <CatQualityInput
+                     key={item}
+                     labelName={labelNames[item]}
+                     name={item}
+                     value={catQualities[item]}
+                     onChange={handleChangeInputValue}
+                  />
+               ))}
             </ul>
             <Link to="results" state={{ parameters: catQualities }}>
                <button className="btn">Search</button>
