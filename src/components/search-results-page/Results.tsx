@@ -9,7 +9,7 @@ export const Results = () => {
 
    if (error) {
       console.error(`Error fetching fact: ${error.message}`);
-      return <p className="fact-text">Some error occurred</p>;
+      return <p className="message">Some error occurred</p>;
    }
    if (data) {
       console.log('resp');
@@ -21,6 +21,6 @@ export const Results = () => {
       console.log(filteredData);
       return <FilteredBreeds breeds={filteredData} />;
    } else {
-      return <p className="fact-text">Loading...</p>;
+      return <p className="message">Loading...</p>;
    }
 };

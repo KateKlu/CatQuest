@@ -1,6 +1,6 @@
 import FetchData from '../../utils/fetch';
 import { CatRandomFact } from './fact-page.types';
-// import './fact-page.css';
+import './fact-page.css';
 
 export const CatFact = () => {
    const { data, error } = FetchData<CatRandomFact>(
@@ -17,17 +17,3 @@ export const CatFact = () => {
       return <p className="fact-text">Loading...</p>;
    }
 };
-
-// interface CatFactProps {
-//    fact: string;
-//    error: string | null;
-// }
-
-// export const CatFact: React.FC<CatFactProps> = ({ fact, error }) => {
-//    if (error) {
-//       console.error();
-//       return <p>Failed to fetch</p>;
-//    }
-
-//    return <p className="fact-text">{fact}</p>;
-// };

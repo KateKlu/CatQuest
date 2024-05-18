@@ -19,16 +19,3 @@ export const CatPhoto = () => {
       return <p className="fact-text">Loading...</p>;
    }
 };
-
-// interface CatPhotoProps {
-//    photoUrl: string;
-//    error: string | null;
-// }
-
-// export const CatPhoto: React.FC<CatPhotoProps> = ({ photoUrl, error }) => {
-//    if (error) {
-//       return <p>{error}</p>;
-//    }
-
-//    return <img src={photoUrl} alt="Random cat image" className="cat-img" />;
-// };

@@ -27,13 +27,14 @@ export const BreedCharacteristics: React.FC<BreedCharacteristicsProps> = ({
       <>
          <ul className="characteristics-list">
             {Object.keys(labelNames).map((item) => (
-               <li className="breed-characteristic">
+               <li key={item} className="breed-characteristic">
                   {labelNames[item]}
                   <div className="points-block">
                      {[...Array(breedInfo[item as keyof BreedsResponse])].map(
                         (_, index) => (
                            <div
-                              key={`a${index}`}
+                              key={index}
+                              // key={`a${index}`}
                               className="point active-point"
                            />
                         )

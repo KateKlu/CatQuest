@@ -10,7 +10,7 @@ export const ResultElement: React.FC<ResultElementProps> = ({ breedInfo }) => {
    const getBreedPhoto = () => {
       if (error) {
          console.error(`Error fetching data: ${error.message}`);
-         return <p className="fact-text">Some error occurred</p>;
+         return <p className="message">Some error occurred</p>;
       }
       if (data) {
          const imgSrc = data.url;
@@ -22,7 +22,7 @@ export const ResultElement: React.FC<ResultElementProps> = ({ breedInfo }) => {
             />
          );
       } else {
-         return <p className="fact-text">Loading...</p>;
+         return <p className="message">Loading...</p>;
       }
    };
 
