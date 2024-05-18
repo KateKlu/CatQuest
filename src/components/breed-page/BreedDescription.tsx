@@ -1,29 +1,39 @@
 import { BreedCharacteristics } from './BreedCharacteristics';
+import { BreedsResponse } from '../search-results-page/search-results.types';
 
-export const BreedDescription = () => {
+interface BreedDescriptionProps {
+   breedInfo: BreedsResponse;
+}
+
+export const BreedDescription: React.FC<BreedDescriptionProps> = ({
+   breedInfo,
+}) => {
    return (
       <div className="breed-description">
          <ul className="general">
-            <li>weight: 3 - 5 kg</li>
-            <li>life span: 14 - 15</li>
-            {/* <li>country of origin: Egypt</li> */}
+            <li>Weight: {breedInfo.weight.metric} kg</li>
+            <li>Life span: {breedInfo.life_span} years</li>
          </ul>
-         <p className="description">
-            Temperament: Active, Energetic, Independent, Intelligent, Gentle
-         </p>
-         <BreedCharacteristics />
-         <p className="description">
-            The Abyssinian is easy to care for, and a joy to have in your home.
-            They’re affectionate cats and love both people and other animals.
-         </p>
+         <p className="description">Temperament: {breedInfo.temperament}</p>
+
+         <BreedCharacteristics breedInfo={breedInfo} />
+         <p className="description">{breedInfo.description}</p>
          <ul className="sorce-links">
             <li>
-               <a href="http://" target="_blank" rel="noopener noreferrer">
+               <a
+                  href={breedInfo.vetstreet_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+               >
                   {'VetStreet >>>'}
                </a>
             </li>
             <li>
-               <a href="http://" target="_blank" rel="noopener noreferrer">
+               <a
+                  href={breedInfo.wikipedia_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+               >
                   {'Wikipedia >>>'}
                </a>
             </li>

@@ -1,117 +1,53 @@
-export const BreedCharacteristics = () => {
+import { LabelNames } from '../search-page/search.types';
+import { BreedsResponse } from '../search-results-page/search-results.types';
+
+interface BreedCharacteristicsProps {
+   breedInfo: BreedsResponse;
+}
+
+export const BreedCharacteristics: React.FC<BreedCharacteristicsProps> = ({
+   breedInfo,
+}) => {
+   const labelNames: LabelNames = {
+      adaptability: 'Adaptability',
+      affection_level: 'Affection level',
+      child_friendly: 'Child friendly',
+      dog_friendly: 'Dog friendly',
+      stranger_friendly: 'Stranger friendly',
+      intelligence: 'Intelligence',
+      energy_level: 'Energy level',
+      social_needs: 'Social needs',
+      grooming: 'Grooming',
+      shedding_level: 'Shedding level',
+      health_issues: 'Health issues',
+      vocalisation: 'Vocalisation',
+   };
+
    return (
       <>
          <ul className="characteristics-list">
-            <li className="breed-characteristic">
-               stranger friendly
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               Quality{' '}
-               <div className="points-block">
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               dog friendly{' '}
-               <div className="points-block">
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               intelligence{' '}
-               <div className="points-block">
-                  <div className="point active-point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               social needs{' '}
-               <div className="points-block">
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-                  <div className="point active-point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               Quality{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               energy level{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               Quality{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               Quality{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               intelligence{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
-            <li className="breed-characteristic">
-               social needs{' '}
-               <div className="points-block">
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-                  <div className="point" />
-               </div>
-            </li>
+            {Object.keys(labelNames).map((item) => (
+               <li className="breed-characteristic">
+                  {labelNames[item]}
+                  <div className="points-block">
+                     {[...Array(breedInfo[item as keyof BreedsResponse])].map(
+                        (_, index) => (
+                           <div
+                              key={`a${index}`}
+                              className="point active-point"
+                           />
+                        )
+                     )}
+                     {[
+                        ...Array(
+                           5 - Number(breedInfo[item as keyof BreedsResponse])
+                        ),
+                     ].map((_, index) => (
+                        <div key={index} className="point" />
+                     ))}
+                  </div>
+               </li>
+            ))}
          </ul>
       </>
    );

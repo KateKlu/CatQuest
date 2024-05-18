@@ -1,14 +1,14 @@
 export interface LabelNames {
    [key: string]: string;
-   child_friendly: string;
-   dog_friendly: string;
-   energy_level: string;
-   grooming: string;
-   health_issues: string;
-   intelligence: string;
-   shedding_level: string;
-   social_needs: string;
-   stranger_friendly: string;
+   // child_friendly: string;
+   // dog_friendly: string;
+   // energy_level: string;
+   // grooming: string;
+   // health_issues: string;
+   // intelligence: string;
+   // shedding_level: string;
+   // social_needs: string;
+   // stranger_friendly: string;
 }
 
 export interface CatQualities {
