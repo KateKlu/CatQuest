@@ -10,6 +10,7 @@ interface RandomBreedRes {
 
 function BreedPage() {
    const { state } = useLocation();
+   const apiKey = import.meta.env.VITE_API_KEY;
 
    if (state) {
       const breedInfo = { ...state.parameters };
@@ -19,7 +20,7 @@ function BreedPage() {
    }
 
    const { data, error } = FetchData<RandomBreedRes[]>(
-      'https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=true&api_key=live_Wb4BneErmU5HaoOQybcKsVsUAqBP6xCmS4Z6E0qWnaigixhsEZqhWYfPp5ejsoiX'
+      `https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=true&api_key=${apiKey}`
    );
 
    if (error) {
@@ -36,7 +37,6 @@ function BreedPage() {
    } else {
       return <p className="message">Loading...</p>;
    }
-
 }
 
 export default BreedPage;
