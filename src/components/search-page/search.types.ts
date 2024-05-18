@@ -13,8 +13,6 @@ export interface LabelNames {
 
 export interface CatQualities {
    [key: string]: number;
-   //    adaptability?: number;
-   //    affectionLevel?: number;
    child_friendly: number;
    dog_friendly: number;
    energy_level: number;
@@ -24,5 +22,4 @@ export interface CatQualities {
    shedding_level: number;
    social_needs: number;
    stranger_friendly: number;
-   //    vocalisation?: number;
 }

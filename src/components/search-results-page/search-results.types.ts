@@ -1,3 +1,5 @@
+import { CatQualities } from '../search-page/search.types';
+
 export interface BreedsResponse {
    weight: {
       metric: string;
@@ -28,3 +30,5 @@ export interface BreedsResponse {
 export interface BreedPhotoUrl {
    url: string;
 }
+
+export interface SearchParameters extends Partial<CatQualities> {}

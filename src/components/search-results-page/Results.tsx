@@ -1,15 +1,8 @@
 import FetchData from '../../utils/fetch';
-// import { CatQualities } from '../search-page/search.types';
-import { ResultElement } from './ResultElement';
+import { FilteredBreeds } from './FilteredBreeds';
 import { BreedsResponse } from './search-results.types';
 
-// interface ResultsProps {
-//    searchParametrs: CatQualities;
-// }
-
-// export const Results: React.FC<ResultsProps> = ({ searchParametrs }) => {
 export const Results = () => {
-   // console.log(searchParametrs);
    const { data, error } = FetchData<BreedsResponse[]>(
       'https://api.thecatapi.com/v1/breeds'
    );
@@ -19,24 +12,15 @@ export const Results = () => {
       return <p className="fact-text">Some error occurred</p>;
    }
    if (data) {
+      console.log('resp');
+      console.log(data);
       const filteredData: BreedsResponse[] = data.filter(
          (item: BreedsResponse) => item.reference_image_id
       );
-      console.log(data);
-      return (
-         <div className="results">
-            <ul>
-               {filteredData.map((item) => (
-                  <ResultElement
-                     key={item.reference_image_id}
-                     breedInfo={item}
-                  />
-               ))}
-            </ul>
-         </div>
-      );
+      console.log('filteredData');
+      console.log(filteredData);
+      return <FilteredBreeds breeds={filteredData} />;
    } else {
       return <p className="fact-text">Loading...</p>;
-      console.log('loading...');
    }
 };

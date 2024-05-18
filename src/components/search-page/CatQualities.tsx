@@ -5,13 +5,13 @@ export const CatQualities = () => {
    const labelNames: LabelNames = {
       child_friendly: 'child friendly',
       dog_friendly: 'dog friendly',
-      energy_level: 'energy level',
-      grooming: 'grooming',
-      health_issues: 'health issues',
-      intelligence: 'intelligence',
-      shedding_level: 'shedding level',
-      social_needs: 'social needs',
       stranger_friendly: 'stranger friendly',
+      intelligence: 'intelligence',
+      energy_level: 'energy level',
+      social_needs: 'social needs',
+      grooming: 'grooming',
+      shedding_level: 'shedding level',
+      health_issues: 'health issues',
    };
 
    return (
