@@ -4,12 +4,29 @@
    padding: 1.5rem;
 }
 
+.slider {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.slider-back {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--light-color);
+   border-radius: 7%;
+   border: 1px solid var(--dark-color);
+   box-shadow: 1px 5px 5px rgb(0, 0, 0, 0.7);
+   width: 72vw;
+   height: 70vw;
+   margin-bottom: 20px;
+}
 .breed-img {
    display: block;
-   margin: 0 auto;
    border-radius: 7%;
-   margin-bottom: 15px;
-   max-width: 70vw;
+   box-shadow: none;
+   max-width: 72vw;
    max-height: 70vw;
    object-fit: cover;
 }

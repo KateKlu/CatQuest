@@ -11,7 +11,7 @@ export const BreedPageContent: React.FC<BreedPageContentProps> = ({
 }) => {
    return (
       <div className="container breed-page">
-         <PhotoSlider />
+         <PhotoSlider breedId={breedInfo.id} />
          <h1 className="breed-name">{breedInfo.name}</h1>
          <BreedDescription breedInfo={breedInfo} />
          <button className="btn">Back</button>

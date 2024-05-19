@@ -2,10 +2,12 @@ import FetchData from '../../utils/fetch';
 import { FilteredBreeds } from './FilteredBreeds';
 import { BreedsResponse } from './search-results.types';
 
-export const Results = () => {
-   const { data, error } = FetchData<BreedsResponse[]>(
-      'https://api.thecatapi.com/v1/breeds'
-   );
+interface ResultsProps {
+   url: string;
+}
+
+export const Results: React.FC<ResultsProps> = ({ url }) => {
+   const { data, error } = FetchData<BreedsResponse[]>(url);
 
    if (error) {
       console.error(`Error fetching fact: ${error.message}`);

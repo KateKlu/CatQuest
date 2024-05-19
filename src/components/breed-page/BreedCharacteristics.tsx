@@ -34,7 +34,6 @@ export const BreedCharacteristics: React.FC<BreedCharacteristicsProps> = ({
                         (_, index) => (
                            <div
                               key={index}
-                              // key={`a${index}`}
                               className="point active-point"
                            />
                         )
