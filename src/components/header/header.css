@@ -108,3 +108,12 @@
       display: block;
    }
 }
+@media (min-width: 992px) {
+   :root {
+      --navbar-height: 6rem;
+      --navbar-paddingTB: 0.3rem;
+   }
+
+   .light-dark {
+   font-size: 1.8rem;
+}

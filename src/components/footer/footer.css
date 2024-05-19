@@ -15,3 +15,14 @@ footer p {
 footer a {
    color: var(--light-color);
 }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+   footer p {
+      font-size: 2rem;
+   }
+
+   footer {
+      height: 4.5rem;
+   }
+}

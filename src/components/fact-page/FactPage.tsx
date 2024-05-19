@@ -9,10 +9,12 @@ function FactPage() {
          <h1>Did you know that?</h1>
          <div className="container-decktop">
             <CatPhoto />
-            <CatFact />
-            <Link to="/cat-facts">
-               <button className="btn">Back</button>
-            </Link>
+            <div className="cont-fact">
+               <CatFact />
+               <Link to="/cat-facts">
+                  <button className="btn">Back</button>
+               </Link>
+            </div>
          </div>
       </div>
    );
