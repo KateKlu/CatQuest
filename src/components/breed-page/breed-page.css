@@ -89,6 +89,29 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+   .slider-back {
+      height: 40vw;
+      width: 60vw;
+   }
+   .breed-img {
+      max-height: 40vw;
+      max-width: 60vw;
+   }
+
+   .characteristics-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   .breed-characteristic {
+      width: 45%;
+      font-size: 1.8rem;
+   }
+
+   .general li {
+      font-size: 1.8rem;
+   }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
