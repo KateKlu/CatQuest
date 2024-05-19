@@ -129,6 +129,21 @@ img {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+   .container {
+      width: 70%;
+   }
+
+   h1 {
+      font-size: 5rem;
+   }
+   h2 {
+      font-size: 3.5rem;
+   }
+   p,
+   a,
+   label {
+      font-size: 2rem;
+   }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */

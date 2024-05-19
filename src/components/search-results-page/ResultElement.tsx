@@ -31,7 +31,7 @@ export const ResultElement: React.FC<ResultElementProps> = ({ breedInfo }) => {
    );
 
    return (
-      <li key={breedInfo.id}>
+      <li className='result-element' key={breedInfo.id}>
          <Link to="/breed" state={{ parameters: breedInfo }}>
             <figure className="result">
                {getBreedPhoto()}

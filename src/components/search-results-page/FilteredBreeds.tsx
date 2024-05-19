@@ -15,7 +15,7 @@ export const FilteredBreeds: React.FC<FilteredBreedsProps> = ({ breeds }) => {
          {filteredBreeds.length === 0 && (
             <p>Nothing found. Try changing your search parameters</p>
          )}
-         <ul>
+         <ul className='results-list'>
             {filteredBreeds.map((item) => (
                <ResultElement key={item.reference_image_id} breedInfo={item} />
             ))}
