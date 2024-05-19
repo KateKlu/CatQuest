@@ -58,6 +58,10 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+   .search-cats {
+      hight: 40vw;
+      width: 45vw;
+   }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
