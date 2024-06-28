@@ -11,8 +11,8 @@ function SearchBreedResultsPage() {
    return (
       <div className="container search-breed-result">
          <h1>Search results</h1>
-         <BreedByName />
-         <Results url={recUrl} />
+         <BreedByName nameValue={breedName} />
+         <Results key={breedName} url={recUrl} />
          <Link to="/search-breed">
             <button className="btn">Back</button>
          </Link>

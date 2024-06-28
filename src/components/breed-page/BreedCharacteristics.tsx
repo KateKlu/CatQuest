@@ -32,10 +32,7 @@ export const BreedCharacteristics: React.FC<BreedCharacteristicsProps> = ({
                   <div className="points-block">
                      {[...Array(breedInfo[item as keyof BreedsResponse])].map(
                         (_, index) => (
-                           <div
-                              key={index}
-                              className="point active-point"
-                           />
+                           <div key={index} className="point active-point" />
                         )
                      )}
                      {[

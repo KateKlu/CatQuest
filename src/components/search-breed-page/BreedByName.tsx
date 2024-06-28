@@ -1,12 +1,16 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export const BreedByName = () => {
-   const [breedName, setBreedName] = useState('');
-   const [click, setClick] = useState(false);
+interface BreedByNameProps {
+   nameValue: string;
+}
+export const BreedByName: React.FC<BreedByNameProps> = ({ nameValue }) => {
+   const [breedName, setBreedName] = useState(nameValue);
+   const navigate = useNavigate();
+
    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      setClick(true);
+      navigate('/search-breed/results', { state: { parameters: breedName } });
    };
 
    return (
@@ -22,7 +26,12 @@ export const BreedByName = () => {
             autoCorrect="off"
          />
          <input type="submit" value="🔎" className="btn" />
-         {click && <Navigate to="results" state={{ parameters: breedName }} />}
+         {/* {click && (
+            <Navigate
+               to="/search-breed/results"
+               state={{ parameters: breedName }}
+            />
+         )} */}
       </form>
    );
 };

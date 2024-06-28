@@ -8,7 +8,7 @@ function SearchBreedPage() {
    return (
       <div className="container search-breed">
          <h1>Find breed by name</h1>
-         <BreedByName />
+         <BreedByName nameValue="" />
          <img
             src={cats}
             alt="Funny kittens with balls of thread"
