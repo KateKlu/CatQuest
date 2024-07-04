@@ -26,8 +26,10 @@
    display: block;
    border-radius: 7%;
    box-shadow: none;
-   max-width: 72vw;
-   max-height: 70vw;
+   /* max-width: 100%;
+   max-height: 100%; */
+   width: auto;
+   height: inherit;
    object-fit: cover;
 }
 
@@ -52,6 +54,7 @@
 
 .characteristics-list {
    padding: 0 1.5rem;
+   margin: 0 auto;
    margin-bottom: 20px;
 }
 
@@ -85,11 +88,21 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+   .characteristics-list {
+      width: 80%;
+   }
+
+   .point {
+      width: 1rem;
+      height: 1rem;
+   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
    .slider-back {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
       height: 40vw;
       width: 60vw;
    }
@@ -102,6 +115,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      width: 100%;
    }
 
    .breed-characteristic {
@@ -116,8 +130,16 @@
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+   .point {
+      width: 1.4rem;
+      height: 1.4rem;
+   }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+   .slider-back {
+      margin-left: 1rem;
+      margin-right: 1rem;
+   }
 }
