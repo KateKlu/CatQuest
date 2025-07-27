@@ -3,9 +3,15 @@
    --navbar-paddingTB: 0.3rem;
 }
 
-.navbar {
-   height: var(--navbar-height);
+.navbar-container {
    background-color: var(--blue);
+   display: flex;
+   justify-content: center;
+}
+
+.navbar {
+   width: 100%;
+   height: var(--navbar-height);
    display: flex;
    justify-content: space-between;
    padding: var(--navbar-paddingTB) 1rem;
@@ -116,5 +122,12 @@
 
    .light-dark {
       font-size: 1.8rem;
+   }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+   .navbar {
+      width: 80%;
    }
 }

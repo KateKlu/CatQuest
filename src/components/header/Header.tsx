@@ -5,12 +5,14 @@ import { BurgerMenu } from './BurgerMenu';
 
 function Header() {
    return (
-      <nav className="navbar">
-         <Link to="/" className="logo-link">
-            <img src={logo} alt="App logo" className="logo" />
-         </Link>
-         <BurgerMenu />
-      </nav>
+      <div className="navbar-container">
+         <nav className="navbar">
+            <Link to="/" className="logo-link">
+               <img src={logo} alt="App logo" className="logo" />
+            </Link>
+            <BurgerMenu />
+         </nav>
+      </div>
    );
 }
 

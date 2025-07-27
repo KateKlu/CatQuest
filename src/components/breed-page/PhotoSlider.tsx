@@ -1,4 +1,3 @@
-
 import FetchData from '../../utils/fetch';
 import { PhotoSliderContent } from './PhotoSliderContent';
 
@@ -24,4 +23,3 @@ export const PhotoSlider: React.FC<PhotoSliderProps> = ({ breedId }) => {
       return <p className="message">Loading...</p>;
    }
 };
-
