@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/<your‑site‑id>/deploy-status)](https://app.netlify.com/sites/catquest/deploys)
 
-![📸 Screenshot](./screenshot.png) <!-- add the image to the repo -->
+![📸 Screenshot](./src/img/catquest_screen.png)
 
 **CatQuest** is an interactive encyclopedia of cat breeds built with **React 18 + TypeScript + Vite**.  
 Search or filter breeds, browse a photo slider on the breed page and learn a random cat fact — all inside a single‑page app that supports 💡 light and 🌑 dark themes.
@@ -43,20 +43,4 @@ npm install
 cp .env.example .env          # add your VITE_API_KEY
 npm run dev                   # open http://localhost:5173
 
-```
-
-## 📂 Folder Structure
-
-```bash
-src/
-├── api/ # small fetch helpers
-├── components/ # UI blocks and pages
-│ ├── header/ # Header, burger, light‑dark toggle
-│ ├── search‑page/
-│ ├── search-results-page/
-│ ├── breed-page/
-│ └── fact-page/
-├── context/ # CatQualitiesContext (filters)
-├── hooks/ # FetchData (generic async hook)
-└── styles/ # global & module CSS
 ```
